@@ -33,6 +33,7 @@ describe("OceanToken contract" , async function(){
   });
   it('should assign the inital supply to the owner' , async function (){
    const ownerBalance = await oceanToken.balanceOf(owner.address);
+  
     expect(await oceanToken.balanceOf(owner.address)).to.equal(tokencap);
   });
   it('should transfer token correctly ' , async function (){
@@ -64,7 +65,7 @@ describe("OceanToken contract" , async function(){
         // transfer anither 50 token from owner to addr2
         await oceanToken.transfer(addr2.address , 50);
         // check balance
-        
+
   })
   await myToken.connect(addr1).transfer(addr2.address , 30);
   const addr2Balance = await myToken.balanceOf(addr2.address);
